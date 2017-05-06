@@ -1,0 +1,96 @@
+<Page
+    x:Class="AppStudio.Pages.AboutPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:was_controls="using:AppStudio.Uwp.Controls"
+    DataContext="{Binding RelativeSource={RelativeSource Self}}"
+    mc:Ignorable="d">
+    <Grid Background="{StaticResource AppBackground}">
+        <ScrollViewer>
+            <StackPanel Margin="24,32,24,8">
+                <TextBlock
+                    Text="{x:Bind AboutThisAppModel.AppName}"
+                    FontWeight="Light"
+                    FontSize="26"
+                    Style="{StaticResource AppDescriptionsStyle}"/>
+                <TextBlock
+                    Style="{StaticResource AppDescriptionsStyle}">
+                    <Run x:Uid="AppVersion"/>
+                    <Run Text="{x:Bind AboutThisAppModel.AppVersion}"/>
+                </TextBlock>
+                <Viewbox
+                    Margin="0,12,0,0"
+                    HorizontalAlignment="Left"
+                    StretchDirection="DownOnly">
+                    <Border
+                        BorderThickness="1"
+                        BorderBrush="{StaticResource DescriptionForeground}">
+                        <Border.Background>
+                            <SolidColorBrush
+                                Opacity="0.5"
+                                Color="{StaticResource DescriptionForegroundColor}"/>
+                        </Border.Background>
+                        <Image Source="{x:Bind AboutThisAppModel.AppLogo}"/>
+                    </Border>
+                </Viewbox>
+                <TextBlock
+                    Margin="0,12,0,0"
+                    Style="{StaticResource AppDescriptionsStyle}">
+                    <Run x:Uid="DevelopedBy"/>
+                    <Run Text="{x:Bind AboutThisAppModel.Publisher}"/>
+                </TextBlock>
+                <TextBlock
+                    Margin="0,25,0,0"
+                    Text="{x:Bind AboutThisAppModel.AboutText}"
+                    Style="{StaticResource AppDescriptionsStyle}"/>
+                <HyperlinkButton
+                    x:Uid="PrivacyTermsButton"
+                    NavigateUri="{x:Bind AboutThisAppModel.Privacy}"
+                    Style="{StaticResource HyperlinkStyle}"/>
+				<HyperlinkButton                    
+                        x:Uid="AboutViewMoreInformation"
+                        Style="{StaticResource HyperlinkStyle}"
+                        Visibility="{x:Bind AboutThisAppModel.IsMoreInfoVisible, Mode=OneWay, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter=true}"
+                        Command="{x:Bind AboutThisAppModel.ViewMoreInfoCommand, Mode=OneWay}"/>
+                <StackPanel
+                    Visibility="{x:Bind AboutThisAppModel.IsMoreInfoVisible, Mode=OneWay, Converter={StaticResource BoolToVisibilityConverter}}">
+					<TextBlock
+						x:Uid="AboutSectionLicenses"
+						Margin="0,25,0,0"
+						FontWeight="Bold"
+						Style="{StaticResource AppDescriptionsStyle}"/>
+					<HyperlinkButton                    
+						x:Uid="AboutAppStudioOpenSourceLibraries"                    
+						NavigateUri="{x:Bind AboutThisAppModel.WasLibs}"
+						Style="{StaticResource HyperlinkStyle}"/>
+					<HyperlinkButton
+						Content="Newtonsoft JSON"
+						NavigateUri="{x:Bind AboutThisAppModel.NewtonsoftWeb}"
+						Style="{StaticResource HyperlinkStyle}"/>
+					<TextBlock
+						x:Uid="AboutSectionCapabilities"
+						Margin="0,25,0,0"
+						FontWeight="Bold"
+						Style="{StaticResource AppDescriptionsStyle}"/>
+					<TextBlock
+						x:Uid="AboutCapabilityInternet"
+						Margin="0,12,0,0"
+						Style="{StaticResource AppDescriptionsStyle}"/>
+					<TextBlock
+						x:Uid="AboutCapabilityTileUpdater"
+						Margin="0,12,0,0"
+						Style="{StaticResource AppDescriptionsStyle}"/>
+					<StackPanel Margin="0,12,0,0" Orientation="Horizontal">
+                        <TextBlock
+							x:Uid="AboutPoweredBy"
+							FontSize="14"
+							VerticalAlignment="Center"
+							Style="{StaticResource AppDescriptionsStyle}" />
+                    </StackPanel>
+				</StackPanel>
+			</StackPanel>
+        </ScrollViewer>
+    </Grid>    
+</Page>

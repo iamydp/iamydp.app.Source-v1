@@ -1,0 +1,77 @@
+<Page
+    x:Class="AppStudio.Pages.HomePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"    
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:was_actions="using:AppStudio.Uwp.Actions"
+    xmlns:was_commands="using:AppStudio.Uwp.Commands"
+    xmlns:was_controls="using:AppStudio.Uwp.Controls"    
+    xmlns:list_layouts="using:AppStudio.Layouts.List"
+    xmlns:controls="using:AppStudio.Layouts.Controls"
+    xmlns:triggers="using:AppStudio.Triggers"	
+    xmlns:vm="using:AppStudio.ViewModels"
+    DataContext="{Binding ViewModel, RelativeSource={RelativeSource Self}}"
+    mc:Ignorable="d">
+    <was_controls:ShellControl.CommandBar>
+        <was_actions:ActionsCommandBar
+            x:Name="commandBar"
+            IsVisible="{Binding HasActions}"
+            ActionsSource="{Binding Actions}"
+            Style="{StaticResource WasCommandBarStyle}"
+            Foreground="{StaticResource AppBarForeground}"
+            Background="{StaticResource AppBarBackground}"
+            CommandBarOverflowPresenterStyle="{StaticResource WasCommandBarOverflowPresenter}"/>
+    </was_controls:ShellControl.CommandBar>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>        
+        <was_controls:SectionList
+			x:Uid="SectionListItem"
+			ErrorColor="{StaticResource DescriptionForeground}"
+			LoadingTemplateStaticHeight="3"
+			LoadingTemplate="{StaticResource SectionListLoadingTemplate}"
+			TitleTemplate="{StaticResource SectionListTitleTemplate}"
+			HeaderLinkStyle="{StaticResource SectionListHeaderLinkStyle}">
+			<was_controls:SectionListItem
+                DataContext="{Binding MyBlog}"
+                HeaderLinkClickCommand="{Binding SectionHeaderClickCommand}" 
+                HeaderLinkVisibility="Visible"
+				Background="Transparent"
+                ErrorVisibility="{Binding HasLoadDataErrors, Converter={StaticResource BoolToVisibilityConverter}, FallbackValue=Collapsed}"
+                LoadingVisibility="{Binding IsBusy, Converter={StaticResource BoolToVisibilityConverter}, FallbackValue=Collapsed}"
+                d:DataContext="{d:DesignData Source=/Assets/Design/DesignData.json, Type=vm:DesignViewModel, IsDesignTimeCreatable=true}">
+                <DataTemplate>
+                    <list_layouts:ListBigVerticalCardBox DataContext="{Binding}" ItemsSource="{Binding Items}" ItemClickCommand="{Binding ItemClickCommand}" OneRowModeEnabled="True" Margin="19,0,12,24"/>
+                </DataTemplate>
+			</was_controls:SectionListItem>
+			<was_controls:SectionListItem
+                DataContext="{Binding AboutMe}"
+                HeaderLinkClickCommand="{Binding SectionHeaderClickCommand}" 
+                HeaderLinkVisibility="Visible"
+				Background="Transparent"
+                ErrorVisibility="{Binding HasLoadDataErrors, Converter={StaticResource BoolToVisibilityConverter}, FallbackValue=Collapsed}"
+                LoadingVisibility="{Binding IsBusy, Converter={StaticResource BoolToVisibilityConverter}, FallbackValue=Collapsed}"
+                d:DataContext="{d:DesignData Source=/Assets/Design/DesignDataHtml.json, Type=vm:DesignViewModel, IsDesignTimeCreatable=true}">
+                <DataTemplate>
+                    <Grid Height="400">                        
+                        <was_controls:HtmlBlock
+                            Margin="24,0"
+                            Style="{StaticResource HtmlStyle}"
+                            HorizontalAlignment="Left"
+                            FontSize="22.0"
+                            Source="{Binding Items[0].Content}" />                        
+                    </Grid>
+                </DataTemplate>
+			</was_controls:SectionListItem>
+        </was_controls:SectionList>
+        <controls:DataUpdateInformationControl
+			Grid.Row="1"
+			Margin="22,4,22,4"
+			HorizontalAlignment="Left"
+			LastUpdateDateTime="{Binding LastUpdated}"
+			Color="{StaticResource DescriptionForeground}"/>
+    </Grid>
+</Page>
