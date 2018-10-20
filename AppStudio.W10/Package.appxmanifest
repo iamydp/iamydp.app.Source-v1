@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
-  <Identity Name="000iamydp" Publisher="CN=1-0" Version="1.1.13.0" />
+  <Identity Name="000iamydp" Publisher="CN=iamydp" Version="1.2.21.0" />
   <mp:PhoneIdentity PhoneProductId="0a966434-0ac9-4d57-9c83-f065b0a1af58" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
-    <DisplayName>大鹏的个人空间</DisplayName>
+    <DisplayName>Mr.loading</DisplayName>
     <PublisherDisplayName>iamydp</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>

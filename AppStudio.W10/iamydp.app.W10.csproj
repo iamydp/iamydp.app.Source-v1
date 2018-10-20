@@ -22,12 +22,15 @@
     <UapDefaultAssetScale>200</UapDefaultAssetScale>
     <UseDotNetNativeSharedAssemblyFrameworkPackage>True</UseDotNetNativeSharedAssemblyFrameworkPackage>
     <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
-    <AppxBundle>Never</AppxBundle>
-    <AppxBundlePlatforms>arm</AppxBundlePlatforms>
-    <PackageCertificateThumbprint>114EB72D719DFF9BC3993891546A245B8E3D9CE2</PackageCertificateThumbprint>
-    <PackageCertificateKeyFile>IamydpApp.W10_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <AppxBundle>Auto</AppxBundle>
+    <AppxBundlePlatforms>x64</AppxBundlePlatforms>
+    <PackageCertificateThumbprint>55B4ED86D0896F9363223178612D0FFC73968207</PackageCertificateThumbprint>
+    <PackageCertificateKeyFile>iamydp.app.W10_TemporaryKey.pfx</PackageCertificateKeyFile>
     <HockeyAppResourceId>ce5d04dad6d14f6e83f1fcd28b9bcfb3</HockeyAppResourceId>
     <AppxSymbolPackageEnabled>True</AppxSymbolPackageEnabled>
+    <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
+    <AppInstallerUpdateFrequency>1</AppInstallerUpdateFrequency>
+    <AppInstallerCheckForUpdateFrequency>OnApplicationRun</AppInstallerCheckForUpdateFrequency>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
     <DebugSymbols>true</DebugSymbols>
@@ -360,6 +363,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\HockeyApp\ConnectedService.json" />
+    <None Include="iamydp.app.W10_TemporaryKey.pfx" />
     <None Include="IamydpApp.W10_TemporaryKey.pfx" />
     <None Include="project.json" />
   </ItemGroup>
