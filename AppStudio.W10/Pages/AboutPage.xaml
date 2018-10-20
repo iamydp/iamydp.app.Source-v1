@@ -65,10 +65,6 @@
 						x:Uid="AboutAppStudioOpenSourceLibraries"                    
 						NavigateUri="{x:Bind AboutThisAppModel.WasLibs}"
 						Style="{StaticResource HyperlinkStyle}"/>
-					<HyperlinkButton
-						Content="Newtonsoft JSON"
-						NavigateUri="{x:Bind AboutThisAppModel.NewtonsoftWeb}"
-						Style="{StaticResource HyperlinkStyle}"/>
 					<TextBlock
 						x:Uid="AboutSectionCapabilities"
 						Margin="0,25,0,0"

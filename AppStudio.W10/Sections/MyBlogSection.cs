@@ -27,7 +27,7 @@ namespace AppStudio.Sections
         {
             var config = new RssDataConfig
             {
-                Url = new Uri("https://www.iamydp.cn/?feed=rss2"),
+                Url = new Uri("https://www.iamydp.cn/feed/"),
             };
             return await _dataProvider.LoadDataAsync(config, MaxRecords);
         }

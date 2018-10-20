@@ -13,7 +13,7 @@ namespace AppStudio.ViewModels
     {
         public SearchViewModel() : base()
         {
-			Title = "大鹏的个人空间";
+			Title = "Mr.loading";
             MyBlog = ViewModelFactory.NewList(new MyBlogSection());
             AboutMe = ViewModelFactory.NewList(new AboutMeSection());
                         

@@ -14,10 +14,10 @@
     <Resource Language="x-generate" />
   </Resources>
   <Applications>
-    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="IamydpApp.App">
-      <uap:VisualElements DisplayName="大鹏的个人空间" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="大鹏的个人空间（iamydp.cn）配套app" BackgroundColor="transparent">
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="Mr.loading.app.app">
+      <uap:VisualElements DisplayName="Mr.loading" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="The app,specially designed for Mr.loading" BackgroundColor="transparent">
         <uap:LockScreen Notification="badgeAndTileText" BadgeLogo="Assets\BadgeLogo.png" />
-        <uap:SplashScreen Image="Assets\SplashScreen.png" BackgroundColor="#ffffff" />
+        <uap:SplashScreen Image="Assets\SplashScreen.png" BackgroundColor="#23B7E5" />
         <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" Square310x310Logo="Assets\Square310x310Logo.png" Square71x71Logo="Assets\Square71x71Logo.png">
           <uap:TileUpdate Recurrence="halfHour" UriTemplate="http://ds.winappstudio.com/api/tile10?config=bAIAAB~LCAAAAAAABACNUU1vwjAM/S8~V1DYTrnxMU2TxkBrJw7TDqE1JSJJqzShVKj/fU5T0A5jmnLxs5/fs50LLOu0rRDYY0ThotR7UQC7wNrkaAJ0hltRap~dSVk2fQnYnssao0Cct8Bg43ZS1IcltwhDfikMZqE57iL4MJJ4B2srNh43TTMSXLV5Ncr0eI~YA1FSVJX0CuSWColvXKHXRjyS6NxwnQtNE8Y0rqiJ2g4Mqj6b0lU1sM8LJG73A21RFAcLbBLH3uFsE8uz41XnSaJCbQPVV703rW4pScKpsNIvtDW8um29EvpVaKQe7aQkzM8DnkTe3LdcuYltZTjwTIpCq17Wn~NF8QKDQhf9Zp04pbhpb~bWuD~9H~55T//nHfSGEh3RZDRED/3PRfCOqjzhiptC6Os0C1NW/RnXJzT0HX28kTzDYDbtuq/~dd~0AailbAIAAA==" />
         </uap:DefaultTile>
@@ -26,5 +26,6 @@
   </Applications>
   <Capabilities>
     <Capability Name="internetClientServer" />
+    <Capability Name="internetClient" />
   </Capabilities>
 </Package>

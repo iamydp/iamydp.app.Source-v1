@@ -26,7 +26,7 @@ namespace AppStudio.ViewModels
 
         public MainViewModel(int visibleItems) : base()
         {
-            Title = "大鹏的个人空间";
+            Title = "Mr.loading";
             MyBlog = ViewModelFactory.NewList(new MyBlogSection(), visibleItems);
             AboutMe = ViewModelFactory.NewList(new AboutMeSection(), visibleItems);
 

@@ -13,16 +13,14 @@ namespace AppStudio.ViewModels
     {
 		public AboutThisAppViewModel()
         {
-            this.AppName = "大鹏的个人空间";
+            this.AppName = "Mr.loading";
             this.Title = "NavigationPaneAbout".StringResource();
             this.Publisher = "iamydp";
             this.AppVersion = string.Format("{0}.{1}.{2}.{3}", Package.Current.Id.Version.Major, Package.Current.Id.Version.Minor, Package.Current.Id.Version.Build, Package.Current.Id.Version.Revision);
-            this.AboutText = "大鹏的个人空间（iamydp.cn）配套app";
+            this.AboutText = "一个为Mr.loading设计的基于rss的uwp配套应用";
             this.AppLogo = new BitmapImage(new Uri("ms-appx:///Assets/ApplicationLogo.png"));
-            this.Privacy = "https://www.iamydp.cn/?page_id=290";
+            this.Privacy = "https://www.iamydp.cn/app.html";
             this.WasLibs = "https://github.com/wasteam/waslibs";
-            this.WindowsAppStudioWeb = "https://appstudio.windows.com/";
-            this.NewtonsoftWeb = "http://www.newtonsoft.com/json";
         }
 
 		public string AppName { get; set; }
@@ -31,8 +29,6 @@ namespace AppStudio.ViewModels
         public string AboutText { get; set; }
         public string Privacy { get; set; }
         public string WasLibs { get; set; }
-        public string WindowsAppStudioWeb { get; set; }
-        public string NewtonsoftWeb { get; set; }
         public BitmapImage AppLogo { get; set; }
 
 		private bool _isMoreInfoVisible;

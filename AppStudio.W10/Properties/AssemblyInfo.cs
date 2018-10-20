@@ -10,8 +10,8 @@ using System.Resources;
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("大鹏的个人空间")]
-[assembly: AssemblyCopyright("Copyright © 2017")]
+[assembly: AssemblyProduct("Mr.loading")]
+[assembly: AssemblyCopyright("Copyright © 2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
